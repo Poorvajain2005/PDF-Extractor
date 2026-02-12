@@ -1,4 +1,4 @@
-poppler/
+poppler*
 node_modules/
 venv/
 build/
