@@ -1,0 +1,8 @@
+poppler/
+poppler-23.08.0/
+poppler.zip
+poppler*
+node_modules/
+venv/
+build/
+.env

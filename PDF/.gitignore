@@ -1,5 +1,0 @@
-poppler*
-node_modules/
-venv/
-build/
-.env
