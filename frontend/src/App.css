@@ -1,0 +1,65 @@
+:root {
+  /* Dark Theme */
+  --bg-dark: #0b0e14;
+  --card-dark: #071428;
+  --neon: #00a7ff;
+  --muted: #8b949e;
+  --text: #e6eef8;
+  
+  /* Light Theme */
+  --bg-light: #f5f7fa;
+  --card-light: #ffffff;
+  --text-light: #1a1f36;
+  --muted-light: #6b7280;
+  --neon-light: #0066cc;
+}
+
+body, html, #root { height: 100%; margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+.app.dark { background: var(--bg-dark); color: var(--text); min-height: 100vh; transition: all 0.3s ease; }
+.app.light { background: var(--bg-light); color: var(--text-light); min-height: 100vh; transition: all 0.3s ease; }
+
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:16px 32px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.app.light .navbar { border-bottom: 1px solid rgba(0,0,0,0.08); }
+.nav-left, .nav-right { display:flex; align-items:center; }
+.brand { font-weight:800; font-size:20px; }
+.brand .dot { color: var(--neon); }
+.app.light .brand .dot { color: var(--neon-light); }
+.logo-placeholder { width:36px; height:36px; background:linear-gradient(135deg,#012,#034); border-radius:6px; color:#fff; display:flex; align-items:center; justify-content:center; margin-right:12px; font-size:10px; font-weight:700; }
+.app.light .logo-placeholder { background:linear-gradient(135deg,#0066cc,#00a7ff); }
+.theme-toggle { background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--text); padding:6px 8px; border-radius:6px; cursor:pointer; transition: all 0.2s; }
+.theme-toggle:hover { background:rgba(255,255,255,0.05); }
+.app.light .theme-toggle { border:1px solid rgba(0,0,0,0.1); color:var(--text-light); }
+.app.light .theme-toggle:hover { background:rgba(0,0,0,0.05); }
+
+.container { display:flex; max-width:1100px; margin:28px auto; gap:24px; padding:20px; }
+.sidebar { width:35%; background:var(--card-dark); padding:24px; border-radius:10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.app.light .sidebar { background:var(--card-light); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.results { flex:1; background:rgba(255,255,255,0.02); padding:20px; border-radius:10px; }
+.app.light .results { background:var(--card-light); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.label { display:block; margin-top:16px; margin-bottom:8px; font-weight:600; font-size:14px; }
+.desc { color:var(--muted); font-size:14px; margin-top:8px; }
+.app.light .desc { color:var(--muted-light); }
+input[type="file"] { width:100%; padding:8px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.02); border-radius:6px; color:var(--text); margin-bottom:8px; }
+.app.light input[type="file"] { border:1px solid rgba(0,0,0,0.15); background:#f9fafb; color:var(--text-light); }
+.primary { background:var(--neon); color:#001322; border:none; padding:12px 16px; border-radius:8px; cursor:pointer; margin-top:12px; font-weight:600; width:100%; transition: all 0.2s; }
+.primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,167,255,0.3); }
+.primary:disabled { opacity:0.5; cursor:not-allowed; }
+.app.light .primary { background:var(--neon-light); color:#fff; }
+.stats { margin-top:18px; padding:12px; background:rgba(0,167,255,0.05); border-radius:6px; color:var(--muted); font-size:13px; }
+.app.light .stats { background:rgba(0,102,204,0.05); color:var(--muted-light); }
+.stats div { margin:4px 0; }
+.results-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.copy { background:transparent; color:var(--neon); border:1px solid rgba(0,167,255,0.2); padding:6px 10px; border-radius:6px; cursor:pointer; transition: all 0.2s; }
+.copy:hover { background:rgba(0,167,255,0.1); }
+.app.light .copy { color:var(--neon-light); border:1px solid rgba(0,102,204,0.2); }
+.app.light .copy:hover { background:rgba(0,102,204,0.1); }
+.results-body { min-height:420px; padding:12px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); }
+.app.light .results-body { background:linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02)); }
+.output { white-space:pre-wrap; color:var(--text); font-size:14px; line-height:1.6; }
+.app.light .output { color:var(--text-light); }
+.loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:var(--muted); }
+.app.light .loading { color:var(--muted-light); }
+.spinner { width:44px; height:44px; border-radius:50%; border:4px solid rgba(255,255,255,0.06); border-top-color:var(--neon); animation:spin 1s linear infinite; margin-bottom:10px; }
+.app.light .spinner { border:4px solid rgba(0,0,0,0.08); border-top-color:var(--neon-light); }
+@keyframes spin { to { transform:rotate(360deg) } }
